@@ -1,4 +1,5 @@
 import os
+
 import psutil
 
 
@@ -29,6 +30,3 @@ class BrowserHandler:
             except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess) as e:
                 print("Error closing browser:\n" + e)
                 pass
-
-
-

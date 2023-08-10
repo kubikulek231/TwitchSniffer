@@ -1,5 +1,5 @@
 from ui.ui_handler_main import UICleaner, UIHandlerMain
-import os
+
 
 class UIHandlerUserInput:
     def __init__(self):
@@ -101,5 +101,3 @@ class UIHandlerUserInput:
                 return browser_path
             except ValueError:
                 print(" Invalid browser path. Try again.")
-
-

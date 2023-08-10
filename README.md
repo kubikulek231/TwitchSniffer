@@ -7,6 +7,7 @@
 ## Dependencies
 
 - Python 3.11
-- BeautifulSoup
+- Requests
+- BeautifulSoup4
 - Keyboard
 - Psutil

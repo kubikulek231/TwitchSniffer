@@ -1,6 +1,7 @@
+import time
+
 import requests
 from bs4 import BeautifulSoup
-import time
 
 
 class TwitchChannelHandler:
@@ -29,4 +30,3 @@ class TwitchChannelHandler:
             html_str = self._get_html_str(url)
             if "offline" not in html_str:
                 return channel
-

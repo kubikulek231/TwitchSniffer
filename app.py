@@ -1,10 +1,10 @@
 import sys
 
+from handler.browser_handler import BrowserHandler
 from handler.preferences_handler import PreferencesHandler, ChannelErrorState
 from ui.ui_handler_main import UIHandlerMain, UICleaner
-from ui.ui_handler_user_input import UIHandlerUserInput
 from ui.ui_handler_run import UIHandlerRun
-from handler.browser_handler import BrowserHandler
+from ui.ui_handler_user_input import UIHandlerUserInput
 
 
 class App:
@@ -15,7 +15,7 @@ class App:
         UIHandlerMain.show_logo()
         # do countdown
         if UIHandlerMain.run_on_start_countdown():
-            UIHandlerRun(self.preference_handler.channels,  self.preference_handler.options["browser_path"]).run()
+            UIHandlerRun(self.preference_handler.channels, self.preference_handler.options["browser_path"]).run()
 
     def run(self):
         are_preferences_loaded = self.preference_handler.load_from_file() is None

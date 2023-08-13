@@ -1,5 +1,5 @@
-from handler.channel_handler import TwitchChannelHandler
 from handler.browser_handler import BrowserHandler
+from handler.channel_handler import TwitchChannelHandler
 from handler.timer_handler import Timer
 
 
@@ -62,6 +62,3 @@ class Sniffer:
             self._browser_handler.browser_close()
         except Exception:
             pass
-
-
-

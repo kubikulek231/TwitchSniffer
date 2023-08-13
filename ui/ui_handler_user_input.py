@@ -43,6 +43,10 @@ class UIHandlerUserInput:
             return channel
 
     @staticmethod
+    def channel_add_wrong_input():
+        print(" Invalid channel name.\n")
+
+    @staticmethod
     def channel_add_result(success) -> None:
         print(" Channel added successfully.\n" if success is None else " Channel already exists.\n")
 

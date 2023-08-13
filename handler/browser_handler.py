@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 import psutil
 
@@ -16,7 +17,7 @@ class BrowserHandler:
         try:
             browser_cmd = self._browser_path
             browser_args = [browser_cmd, "--new-window", url]
-            psutil.Popen(browser_args)
+            psutil.Popen(browser_args, strout=subprocess.DEVNULL)
         except Exception as e:
             print(f"Error opening browser: {e}")
             return None

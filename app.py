@@ -69,6 +69,9 @@ class App:
                         channel = UIHandlerUserInput.channel_input_menu(channels, prompt, True)
                         if channel is None:
                             break
+                        if len(channel) <= 3:
+                            UIHandlerUserInput.channel_add_wrong_input()
+                            continue
                         UIHandlerUserInput.channel_add_result(self.preference_handler.channel_add(channel))
                     # update the main menu ui with changes on return
                     ui_handler.update(options, channels)

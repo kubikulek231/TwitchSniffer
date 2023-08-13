@@ -1,5 +1,5 @@
 import os
-import subprocess
+from subprocess import DEVNULL, STDOUT, check_call
 
 import psutil
 
@@ -17,9 +17,14 @@ class BrowserHandler:
         try:
             browser_cmd = self._browser_path
             browser_args = [browser_cmd, "--new-window", url]
-            psutil.Popen(browser_args, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+            psutil.Popen(browser_args, stdout=DEVNULL, stderr=STDOUT)
         except Exception as e:
-            print(f"Error opening browser: {e}")
+            print(f"Error opening browser:")
+            try:
+                print(e)
+            except Exception:
+                print("Error printing exception")
+            pass
             return None
 
     def browser_close(self) -> None:
@@ -28,5 +33,9 @@ class BrowserHandler:
                 if os.path.basename(self._browser_path) in process.name():
                     psutil.Process(process.pid).terminate()
             except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess) as e:
-                print("Error closing browser:\n" + e)
+                print("Error closing browser:")
+                try:
+                    print(e)
+                except Exception:
+                    print("Error printing exception")
                 pass

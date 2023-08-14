@@ -19,7 +19,7 @@
 - Can start on boot (after user login) automatically with Autostart [forums.raspberrypi.os](https://forums.raspberrypi.com/viewtopic.php?t=294014)
 
 #### Autostart file for RPi4
-Create autostart file in following path
+Create autostart file in following path:
 ```bash
 sudo nano  /home/USER_NAME/.config/lxsession/LXDE-pi/autostart
 ```

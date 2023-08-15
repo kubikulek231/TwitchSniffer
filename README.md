@@ -10,7 +10,6 @@
 - Python 3.11
 - Requests
 - BeautifulSoup4
-- Keyboard
 - Psutil
 
 ## RPi4
